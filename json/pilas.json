@@ -1,0 +1,50 @@
+{
+  "pilas": [
+    {
+      "nombre": "Pila tanque y batea 60 x 80",
+      "imagen": "/img/pila1.jfif",
+	    "precio": "30.000"
+    },
+    {
+      "nombre": "Pila tanque y dos bateas 70 x 1.40",
+      "imagen": "/img/pila2.jfif",
+	    "precio": "40.000"
+
+    },
+    {
+      "nombre": "Tanque 45 x 45",
+      "imagen": "/img/pilachapada3.jfif",
+	    "precio": "25.000"
+    },
+	{
+	  "nombre": "Pila tanque y dos bateas 65 x 1.25",
+      "imagen": "/img/pilachapada4.png",
+	    "precio": "35.000"
+	},
+	{
+	  "nombre": "Pila tanque batea 60 x 90",
+      "imagen": "/img/pilarojaservicio2.jfif",
+	    "precio": "15.000"
+	},
+	{
+	  "nombre": "Pila tanque y dos bateas 65 x 1.25",
+      "imagen": "/img/pilarojaservicio.jfif",
+	    "precio": "17.000"
+	},
+	{
+	  "nombre": "Pila tanque y dos bateas 70 x 1.40",
+      "imagen": "/img/pila70.png",
+	    "precio": "19.000"
+	},
+	{
+	  "nombre": "Tanque 45 x 45",
+      "imagen": "/img/pilarojatanque.png",
+	    "precio": "10.000"
+	},
+	{
+	  "nombre": "Pila tanque y batea pequeña 50 x 79",
+      "imagen": "/img/pilarojaservicio3.jfif",
+	    "precio": "13.000"
+	}
+  ]
+}

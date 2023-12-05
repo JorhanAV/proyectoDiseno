@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Heustonn</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              Pilas San Luis
+            </span>
+          </a>
+          <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html"> Sobre Nosotros </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="service.html"> Servicio </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contactanos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="info.html">Info.Creador</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+          </form>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- contact section -->
+
+  <section class="contact_section layout_padding">
+    <div class="custom_heading-container">
+      <h3 class=" ">
+        Formulario
+      </h3>
+    </div>
+    <div class="container layout_padding2-top">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <form action="https://formsubmit.co/908088b6271668ab2d6740eeb6a3f4e6" method="POST"  id="myForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="Email" required>
+    
+            <label for="fullName">Nombre completo:</label>
+            <input type="text" id="fullName" name="NombreCompleto" required>
+    
+            <label for="birthdate">Fecha de nacimiento:</label>
+            <input type="date" id="birthdate" name="FechaNacimiento" required>
+
+            <!-- Campo oculto para la edad -->
+            <input type="hidden" id="age" name="Edad">
+
+             <!-- Rango de ingreso -->
+                 <div class="mb-3">
+                  <label for="plazo">Rango de ingreso:</label>
+                  <input type="range" id="rango" name="RangoIngreso" min="375000" max="5000000" step="1" value="375000">
+                  <span id="valorRango">375000</span> colones mensuales
+                </div>
+
+                <script>
+                  //Tercer uso de javaScript
+                  var barraRango = document.getElementById('rango');
+                  var spanValorRango = document.getElementById('valorRango');
+
+                  // Agregar un evento de cambio a la barra de plazo
+                  barraRango.addEventListener('input', function() {
+                      // Actualizar el contenido del span con el valor seleccionado
+                      spanValorRango.textContent = barraRango.value;
+                  });
+                </script>
+      
+            <label for="gender">Género:</label>
+            <select id="gender" name="Género" required>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+            </select>
+    
+            <label for="education">Grado académico:</label>
+            <select id="education" name="GradoAcadémico" >
+                <option value="secundaria">Secundaria</option>
+                <option value="preparatoria">Preparatoria</option>
+                <option value="licenciatura">Licenciatura</option>
+                <option value="maestria">Maestría</option>
+                <option value="doctorado">Doctorado</option>
+            </select>
+    
+            <!-- <button type="button" onclick="calcularEdad()">Calcular Edad</button>-->
+            <button type="submit" onclick="calcularEdad()">Enviar</button>
+        </form>
+        </div>
+      </div>
+
+    </div>
+
+
+    <script>
+      //Segundo uso de javaScript
+      function calcularEdad() {
+        // Obtener la fecha de nacimiento del formulario
+        const fechaNacimiento = document.getElementById("birthdate").value;
+    
+        // Calcular la edad
+        const today = new Date();
+        const birthDate = new Date(fechaNacimiento);
+        let age = today.getFullYear() - birthDate.getFullYear();
+    
+        // Ajustar la edad si aún no ha pasado el cumpleaños este año
+        if (today.getMonth() < birthDate.getMonth() || (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+    
+        // Asignar la edad al campo oculto
+        document.getElementById("age").value = age;
+    }
+    </script>
+  </section>
+
+
+  <!-- end contact section -->
+
+  <!-- info section -->
+  <section class="info_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info-logo">
+            <h2>
+              Pilas San Luis
+            </h2>
+           
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info-nav">
+            <h4>
+              Navegación
+            </h4>
+            <ul>
+              <li>
+                <a href="index.html">
+                  Inicio
+                </a>
+              </li>
+              <li>
+                <a href="about.html">
+                  Sobre Nosotros
+                </a>
+              </li>
+              <li>
+                <a href="service.html">
+                  Servicio
+                </a>
+              </li>
+              <li>
+                <a href="contact.html">
+                  Contáctanos
+                </a>
+              </li>
+              <li>
+                <a href="info.html">
+                  Info.Creador
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info-contact">
+            <h4>
+              Información de contacto
+            </h4>
+            <div class="location">
+              <h6>
+                Dirección:
+              </h6>
+              <a href="">
+                <img src="images/location.png" alt="">
+                <span>
+                  San Luis, Sabanilla de Alajuela
+                </span>
+              </a>
+            </div>
+            <div class="call">
+              <h6>
+                Contáctos:
+              </h6>
+              <a href="">
+                <img src="images/telephone.png" alt="">
+                <span>
+                  (+506) 60645596
+                  <br>
+                </span>
+                <span>
+                  pilassanluis@hotmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="discover">
+            <h4>
+              Discover
+            </h4>
+            <ul>
+
+              <li>
+                <a href="#trabajo">
+                  Como encargar con nosotros
+
+                </a>
+              </li>
+
+              <li>
+                <a href="contact.html">
+                  Contáctanos
+                </a>
+              </li>
+            </ul>
+            <div class="social-box">
+              <a href="https://www.facebook.com/Pilasrojasyenchapadas" target="_blank">
+                <img src="images/facebook.png" alt="">
+              </a>
+              <a href="https://wa.me/60645596?text=Buenas%20me%20gustaría%20más%20información." target="_blank">
+                <img src="img/whats.png" alt="" id="whats">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      Copyright &copy; 2019 All Rights Reserved By
+      <a href="https://html.design/">Free Html Templates</a>
+    </p>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+
+</html>
